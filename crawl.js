@@ -39,7 +39,7 @@ async function crawlPage(baseURL, currentURL, pages) {
     const nextURLs = getURLsfromHTML(htmlBody, baseURL);
 
     for (const nextURL of nextURLs) {
-        pages = await crawlPage(baseURL, nextURL, pages);
+      pages = await crawlPage(baseURL, nextURL, pages);
     }
   } catch (err) {
     console.log(`error in fetch: ${err.message}, on page: ${currentURL}`);
